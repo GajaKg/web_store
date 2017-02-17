@@ -28,7 +28,7 @@ function getServiceData(method, url, bool){
     }
 }
 
-var customers = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
+var customers = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=jsonp", false).value;
 console.log(customers);
 
 //------------------------------------------------- LOGIN --------------------------------------------\\
