@@ -2,10 +2,11 @@
 sessionStorage.setItem('isActiveSession', true);
 sessionStorage.setItem('user', username);
 */
+/*
 if(!sessionStorage.getItem('isActiveSession')){
    window.location = 'login.html';
 } 
-
+*/
 var customer = sessionStorage.getItem("user");
 var products = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Products?&$format=json", false).value;
 var categories = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Categories?&$format=json", false).value; 
