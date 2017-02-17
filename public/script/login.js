@@ -11,7 +11,6 @@ function getServiceData(method, url, bool){
         */
         
         req = new XMLHttpRequest();
-        req.setRequestHeader("Content-Type", "application/json");
         
         req.onreadystatechange = function(){
             if(req.readyState == 4 && req.status == 200){
@@ -19,7 +18,6 @@ function getServiceData(method, url, bool){
                 result = JSON.parse(req.response);
             }
         }
-        
         
         req.open(method, url, bool);
         req.send();
@@ -30,7 +28,7 @@ function getServiceData(method, url, bool){
     }
 }
 
-var customers = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
+var customers = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
 console.log(customers);
 
 //------------------------------------------------- LOGIN --------------------------------------------\\
