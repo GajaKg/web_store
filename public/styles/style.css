@@ -1,0 +1,265 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../images/html.jpg");   
+    background-repeat: repeat;
+}
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#wrapper {
+    width: 1044px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+}
+
+header {
+    
+}
+
+#logo {
+    float: left;
+    margin-right: 50px;
+    position: relative;
+}
+.avatar {
+	border-radius: 50%;
+}
+#customer-name { 
+
+    color: #9A39E9;
+}
+.wellcome {
+    font-size: 12px;
+    font-weight: bold;
+}
+/* customer navigation */
+#customer-nav {
+	width: 640px;
+	float: left;
+	margin: 10px 0 20px 0;
+	padding: 0;
+	list-style: none;   
+    
+}
+#customer-nav ul {
+	list-style: none;
+    
+}
+#customer-nav li {
+	float: left; 
+}
+#customer-nav li a {
+	display: block;
+	font-weight: bold;
+	color: #7A932E;
+    margin: 0px 10px;
+    font-size: 12px;
+
+}
+#customer-nav li:last-child a {
+	display: block;
+	font-weight: bold;
+	color: #9A39E9;
+    margin: 0px 10px;
+    font-size: 12px;
+
+}
+#customer-nav li a:hover {
+	color: #408DAC;
+}
+
+#basketBox {
+	float: left;
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+}
+#basket {
+    height: 50px;
+}
+
+  /* Begin Navigation Bar Styling */
+nav {
+	
+	float: left;
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc; 
+	border-top: 1px solid #ccc; 
+    
+}
+nav ul {
+	list-style: none;
+    
+}
+nav li {
+	float: left; 
+}
+nav li a {
+	display: block;
+	padding: 8px 15px;
+	
+	font-weight: bold;
+	color: #7A932E;
+	border-right: 1px solid #ccc; 
+}
+nav li:first-child a {
+	display: block;
+	padding: 8px 15px;
+	background-color: #fff;
+	font-weight: bold;
+	color: #286090;
+	border-right: 1px solid #ccc; 
+}
+nav li a:hover {
+	color: #408DAC;
+	background-color: #fff; 
+    text-decoration: none;
+}
+
+#bill {
+	margin-left: 5px;
+    color: #9A39E9;
+}
+   /* End navigation bar styling. */
+
+section {
+  
+    width: 800px;
+    float: left;
+    min-height: 1px;
+}
+
+/* article box */
+article {
+    width: 200px;
+    height: 320px;
+    float: left;
+    padding: 10px 10px 10px 11px;
+}
+
+article [id*="box"] {
+    width: 200px;
+    height: auto;
+    background-color: ghostwhite;
+    float: left;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 5px;
+}
+article [id*="productName"] {
+    color: #286090;
+    padding: 5px 0px;
+    font-weight: bold;
+}
+article .productCategory {
+    font-size: 10px;
+    font-weight: bold;
+}
+article [class*="productImage"] {
+    padding: 5px 0px;
+    position: relative;
+}
+article [class*="productPrice"] {
+    padding: 5px 0px;
+    font-weight: bold;
+}
+article [id*="productDetails"] {
+    width: 200px;
+    height: 31px;
+    float: left;
+    background: transparent url("../images/products_details_bg.gif") no-repeat scroll center center;
+    margin: 3px 0px 0px;
+}
+.info-style {
+    color: #FFF;
+    background-color: #5BC0DE;
+    border-color: #46B8DA;
+    border-radius: 40%;
+    margin: 0 5px;
+}
+.button-style {
+    color: #FFF;
+    background-color: #b4ce64;
+    border-color: #408DAC;
+    margin: 0 5px;
+    transition: background-color 0.5s ease;
+}
+.button-style:hover {
+    background-color: #408DAC;
+    border-color: #b4ce64;
+}
+input [id*="qunatity"] {
+    width: 10px;
+
+}
+
+
+/* side menu */
+aside {
+    float: left;
+    width: 200px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    margin: 10px 10px 10px 11px;
+}
+.searchMenu {
+    font-weight: bold;
+	color: #7A932E;
+    margin: 0px 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.selectpicker {
+	width: 180px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.custom-search-form{
+    margin-top:5px;
+}
+.form-control {
+	width: 180px; 
+    height: 28px;
+    z-index: 0;
+}
+#ordersToggle .form-control{
+	margin-left: 10px;
+}
+
+#ordersToggle {
+	border-bottom: 1px solid #7A932E;
+    margin-bottom: 4px;
+}
+.input-group {
+    z-index: 0;
+}
+.row {
+    width: 200px;
+}
+#searchPrice {
+    margin-left: 10px;
+    height: 20px;
+    padding: 0 12px;
+}
+
+/* orders */
+.table thead {
+    color: #408DAC;
+}
+
+.ghost {
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    
+}

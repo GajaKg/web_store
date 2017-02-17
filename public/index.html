@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sr" lang="sr">
+<head>
+<title>E store</title>
+<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<!--<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+<!-- bootstrap -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>    
+-->
+<!--<script type="text/javascript" src="../public/script/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="../public/styles/modal.css"/>
+<link rel="stylesheet" type="text/css" href="../public/styles/style.css"/>
+    
+<script type="text/javascript" src="../public/script/notify.js"></script>
+<script type="text/javascript" src="../public/script/app.js"></script>
+<script type="text/javascript" src="../public/script/orders.js"></script>
+</head>
+<body>
+<div id='wrapper'>
+    
+<header>
+    
+    <div id='logo'>
+        <div id='customer'></div>
+        <div><img class="avatar" src="images/avatar.png" width="100px;" /><p id="customer-name">asd</p></div>
+    </div>
+    
+    <div id="customer-nav">			
+        <ul id="quick_links">
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#" onclick="myOrders()">My Orders</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+    
+    <div id="basketBox">
+    <a href="#"><img src="images/images.jpg" onclick="showBasket()" id='basket' ><span id="bill">0.00$</span></a>
+    </div>
+    
+    <nav>
+         <ul>
+   
+            <li><a href="#" onclick=" confirmOrder()">Confirm order!</a></li>
+            <li><a href="#" onclick="displayAllProducts()">All products</a></li>
+            <li><a href="#" onclick="displayAllOrders()">All orders</a></li>
+            <li><a href="#openModal">Add product</a></li>
+        </ul> 
+    </nav>
+
+
+<div id="openModal" class="modalDialog">
+    <div>	<a href="#close" title="Close" class="close">X</a>
+        
+        <p><input type="text" id="productNameModal" placeholder='Product name' required/></p>
+        <p><select id="categoriesModal"></select></p>
+        <p><input type="number" id="productPriceModal" placeholder='Product price' value="1" min="1" /></p>
+        <p><button id='addModal'>Add</button></p>
+    </div>
+</div>
+    
+    
+    
+    <div style="clear: both";></div>
+     <hr />
+</header>
+    
+<section>
+
+    
+</section>
+    
+    
+<aside>
+    
+<div class="container">
+    
+	<div class="row">
+        <div id="ordersToggle" hidden="true">
+            <div class='searchMenu'>Search customer orders</div>
+            <input type="text" class="form-control" id="orderWord" onkeyUp="ordersSearch()" disabled="false" placeholder="search"><br/>
+            
+            <div class='searchMenu'>Pickup date</div>
+            <input type="text" class="form-control" id="datepicker1" onchange="ordersSearch()" placeholder="from"><br/>
+            <input type="text" class="form-control" id="datepicker2" onchange="ordersSearch()" placeholder="to"><br/>
+        
+        
+        </div>
+        
+        <div id="productsToggle">
+            <!-- search products by name -->
+            <div class='searchMenu'>Search products</div>
+            <div class="col-lg-3" style="width: 170px; height:35px; margin-bottom: 20px;">
+                <div class="input-group custom-search-form" style="width: 180px; height:28px;">
+                  <input type="text" class="form-control" id='searchProduct' placeholder="search product" onkeyUp="searchProducts()" disabled="false">
+                  <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+                 </button>
+                 </span>
+                 </div><!-- /input-group -->
+            </div>
+            <!-- END search products by name END -->
+
+            <!-- search products by category -->
+            <div class='searchMenu'>Search Category</div>
+            <div style="margin-bottom: 20px;">
+                <select class="selectpicker" id='searchCategory' onchange="searchProducts()" >
+                </select>    
+
+            </div>
+            <!-- END search products by category END -->
+
+            <!-- search products by price -->
+            <div class='searchMenu'>Search by Price</div>
+            <div class='searchPrice'><input type="number" class="form-control" id='searchPrice' value="0" min="0" onchange="searchProducts()"></div>
+            <div style="margin-bottom: 20px;">
+                <select class="selectpicker" id='searchRange' onchange="searchProducts()"> 
+                  <option value='largerEqual'>>=</option>
+                  <option value='equal'> = </option>
+                  <option value='smallerEqual'> <= </option>
+                </select>    
+
+            </div>
+            <!-- END search products by price END -->    
+        </div>
+    </div><!-- <div id="productsToggle"> -->
+    
+    
+    
+</div>
+    
+</aside>    
+    
+<footer style="clear:both";>
+    
+</footer> 
+    
+</div>    
+    
+    
+
+</body>
+</html>
