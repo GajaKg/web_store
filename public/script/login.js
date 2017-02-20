@@ -20,7 +20,7 @@ function getServiceData(method, url, bool){
         }
         
         req.open(method, url, bool);
-        req.withCredentials = true;
+        //req.withCredentials = true;
         req.setHeader("Access-Control-Allow-Origin", "*");
         req.send();
         return result;
@@ -30,7 +30,7 @@ function getServiceData(method, url, bool){
     }
 }
 
-var customers = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
+var customers = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
 console.log(customers);
 
 //------------------------------------------------- LOGIN --------------------------------------------\\
