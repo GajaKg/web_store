@@ -20,6 +20,8 @@ function getServiceData(method, url, bool){
         }
         
         req.open(method, url, bool);
+        req.withCredentials = true;
+        req.setHeader("Access-Control-Allow-Origin", "*");
         req.send();
         return result;
     }
