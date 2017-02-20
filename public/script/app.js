@@ -33,6 +33,10 @@ function getServiceData(method, url, bool){
         }
         
         req.open(method, url, bool);
+        req.setHeader("Access-Control-Allow-Origin", "*");
+        req.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization, X-Request-With");
+        req.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        req.setHeader("Access-Control-Allow-Credentials", "true");
         req.send();
         return result;
     }
@@ -41,13 +45,12 @@ function getServiceData(method, url, bool){
     }
 }
 
-
 // ********************** on WINDOW LOAD *********************** \\
 $(document).ready(function(){
     
    //checkingIfUserLogedin();
     
-enableProductSearch();
+//enableProductSearch();
     
 $("#customer-name").html("<span class='wellcome'>wellcome, </span>" + customer);
     
