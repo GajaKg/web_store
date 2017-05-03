@@ -18,14 +18,8 @@ function getServiceData(method, url, bool){
                 result = JSON.parse(req.response);
             }
         }
-        req.setRequestHeader("Access-Control-Allow-Origin", "services.odata.org");
-        req.setRequestHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-Type, MaxDataServiceVersion");
-        //req.setRequestHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-        //req.setRequestHeader("Content-Type", "application/jsonp");
-   
-        console.log(req.getAllResponseHeaders());
+        
         req.open(method, url, bool);
-
         req.send();
         return result;
     }
@@ -34,7 +28,7 @@ function getServiceData(method, url, bool){
     }
 }
 
-var customers = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=jsonp", false).value;
+var customers = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Orders?&$format=json", false).value;
 console.log(customers);
 
 //------------------------------------------------- LOGIN --------------------------------------------\\
