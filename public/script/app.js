@@ -7,10 +7,10 @@ if(!sessionStorage.getItem('isActiveSession')){
 } 
 
 var customer = sessionStorage.getItem("user");
-var products = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Products?&$format=json", false).value;
-var categories = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Categories?&$format=json", false).value; 
-var employees = getServiceData("GET", 'https://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json', false).value;
-var orders = getServiceData("GET", "https://services.odata.org/V3/Northwind/Northwind.svc/Orders?$expand=Order_Details&$format=json", false).value;
+var products = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Products?&$format=json", false).value;
+var categories = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Categories?&$format=json", false).value; 
+var employees = getServiceData("GET", 'http://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json', false).value;
+var orders = getServiceData("GET", "http://services.odata.org/V3/Northwind/Northwind.svc/Orders?$expand=Order_Details&$format=json", false).value;
 
 function getServiceData(method, url, bool){
     
@@ -33,10 +33,6 @@ function getServiceData(method, url, bool){
         }
         
         req.open(method, url, bool);
-        req.setHeader("Access-Control-Allow-Origin", "*");
-        req.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization, X-Request-With");
-        req.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-        req.setHeader("Access-Control-Allow-Credentials", "true");
         req.send();
         return result;
     }
@@ -45,12 +41,13 @@ function getServiceData(method, url, bool){
     }
 }
 
+
 // ********************** on WINDOW LOAD *********************** \\
 $(document).ready(function(){
     
    //checkingIfUserLogedin();
     
-//enableProductSearch();
+enableProductSearch();
     
 $("#customer-name").html("<span class='wellcome'>wellcome, </span>" + customer);
     
@@ -572,6 +569,7 @@ function searchProducts(){
             } //if(word != ""){
         }
     }
+    
 }
 
 
@@ -719,6 +717,7 @@ var inBasket = false;
 function showBasket(){
     
     if(basket.length > 0){
+        
         $("section").html("");
         inBasket = true;
         
